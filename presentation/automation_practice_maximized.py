@@ -1,24 +1,26 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver import ActionChains
 from selenium.webdriver.support.select import Select
 
 driver = webdriver.Chrome(executable_path='C:\\selenium browser drivers\\chromedriver.exe')
 
+driver.maximize_window()
 driver.implicitly_wait(40)
 
-# github practice
-
-# HOME PAGE practice practice
+# HOME PAGE
 driver.get("http://automationpractice.com/index.php")
 driver.find_element(By.XPATH, "(//a[text()='T-shirts'])[2]").click()
 # T-SHIRTS PAGE
-driver.find_element(By.XPATH, "//img[@title='Faded Short Sleeve T-shirts']").click()
+item1 = driver.find_element(By.XPATH, "//img[@title='Faded Short Sleeve T-shirts']")
+actions = ActionChains(driver)
+actions.move_to_element(item1)
 driver.find_element(By.XPATH, "//span[text()='Add to cart']").click()
 driver.find_element(By.XPATH, "//a[@title='Proceed to checkout']").click()
 # SUMMARY PAGE
 driver.find_element(By.XPATH, "//span[text()='Proceed to checkout']").click()
 # SIGN IN PAGE
-driver.find_element(By.ID, "email_create").send_keys("cambridgetest478@gmail.com")
+driver.find_element(By.ID, "email_create").send_keys("cambridgetest477@gmail.com")
 driver.find_element(By.XPATH, "//i[@class='icon-user left']").click()
 # ACCOUNT CREATION
 driver.find_element(By.ID, "id_gender1").click()
