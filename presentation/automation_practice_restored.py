@@ -6,7 +6,7 @@ driver = webdriver.Chrome(executable_path='C:\\selenium browser drivers\\chromed
 
 driver.implicitly_wait(40)
 
-# github practice
+# github practice pull practice
 
 # HOME PAGE practice practice
 driver.get("http://automationpractice.com/index.php")
